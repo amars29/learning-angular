@@ -1,20 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { CounterComponent } from './counter/counter.component';
 
 @Component({
   selector: 'app-root',
+  imports: [CounterComponent],
   template: `
-    <nav>
-     
-      <a routerLink="/" routerLinkActive="active" >Home</a>
-      |
-      <a routerLink="/user">User</a>
-      |
-      
-      
-    </nav>
-    <router-outlet></router-outlet>
+    <main>
+      <h2>Initial Count: {{ initialCount }}</h2>
+      <app-counter [count]="initialCount"></app-counter>
+    </main>
   `,
-  imports: [RouterLink, RouterLinkActive, RouterOutlet],
 })
-export class AppComponent {}
+export class AppComponent {
+  initialCount = 18;
+}
