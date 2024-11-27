@@ -7,7 +7,7 @@ import { CounterComponent } from './counter/counter.component';
   template: `
     <main>
       <h2>Initial Count: {{ initialCount }}</h2>
-      <app-counter [count]="initialCount"></app-counter>
+      <app-counter [count]="initialCount" (countChange)="initialCount=$event"></app-counter>
     </main>
   `,
 })
