@@ -13,5 +13,10 @@ import { InspectorComponent } from "../inspector/inspector.component";
 export class ChildComponent{
     constructor(public flower: FlowerService, public animal: AnimalService){
 
-    }
+    };
+
+    paragraphStyle= 'color:red;'
+    navStyle = 'font-size: 1.2rem; color: cornflowerblue;';
+    linkStyle = 'underline';
+    activeLinkStyle = 'overline';
 }

@@ -1,5 +1,14 @@
 <div>
-    <p>Emoji from FlowerService: {{flower.emoji}}</p>
+
+    <nav [style]='navStyle'>
+        <a [style.text-decoration]="activeLinkStyle" href="/">Home Page</a>
+        <a [style.text-decoration]="linkStyle" href="/">Login</a>
+      </nav>`
+      <!-- The above is for style example -->
+    
+    <p >Emoji from FlowerService: {{flower.emoji}}</p>
     <p>Emoji from AnimalService: {{animal.emoji}}</p>
     <app-inspector />
+
+   
 </div>
