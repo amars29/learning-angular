@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import { Items } from './forloop/items.component';
+import { HeaderComponent } from './header/header.component';
+import { UserComponent } from './user/user.component';
 
 @Component({
   selector: 'app-root',
-  template: `
-  Welcome to Angular!
-  For Loop
-  <app-items />
-`,
-imports: [Items]
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
+imports: [HeaderComponent, UserComponent]
 })
 export class AppComponent {}
