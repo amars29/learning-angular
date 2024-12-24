@@ -1,9 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { TaskComponent } from '../task/task.component';
-import { dummyTasks } from '../dummy-tasks';
 import { NgFor, NgIf } from '@angular/common';
 import { NewTaskComponent } from './new-task/new-task.component';
-import { type TypeNewTaskData } from '../task/task.model';
 import { TasksService } from './tasks.service';
 
 @Component({
@@ -18,8 +16,6 @@ export class TasksComponent {
   isAddingTask = false;
 
   constructor(private tasksService: TasksService) {}
-
-  tasks = dummyTasks;
 
   get selectedUserTasks() {
     return this.tasksService.getUserTasks(this.userId);
