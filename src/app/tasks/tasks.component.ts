@@ -4,6 +4,7 @@ import { dummyTasks } from '../dummy-tasks';
 import { NgFor, NgIf } from '@angular/common';
 import { NewTaskComponent } from './new-task/new-task.component';
 import { type TypeNewTaskData } from '../task/task.model';
+import { TasksService } from './tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -16,32 +17,19 @@ export class TasksComponent {
   @Input({ required: true }) name!: string;
   isAddingTask = false;
 
+  constructor(private tasksService: TasksService) {}
+
   tasks = dummyTasks;
 
   get selectedUserTasks() {
-    return this.tasks.filter((task) => task.userId === this.userId);
-  }
-
-  onCompleteTask(taskId: string) {
-    this.tasks = this.tasks.filter((task) => task.id !== taskId);
+    return this.tasksService.getUserTasks(this.userId);
   }
 
   onStartAddTask() {
     this.isAddingTask = true;
   }
 
-  onCancelAddTask() {
-    this.isAddingTask = false;
-  }
-
-  onAddTask(taskData: TypeNewTaskData) {
-    this.tasks.push({
-      id: 't' + new Date().getTime().toString(),
-      userId: this.userId,
-      title: taskData.title,
-      summary: taskData.summary,
-      dueDate: taskData.date,
-    });
+  onCloseAddTask() {
     this.isAddingTask = false;
   }
 }
