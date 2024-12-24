@@ -1,4 +1,8 @@
-<app-new-task *ngIf="isAddingTask" userId="userId" (close)="onCloseAddTask()" />
+<app-new-task
+  *ngIf="isAddingTask"
+  [userId]="userId"
+  (close)="onCloseAddTask()"
+/>
 
 <section id="tasks">
   <header>

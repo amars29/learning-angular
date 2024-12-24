@@ -40,5 +40,6 @@ export class NewTaskComponent {
       },
       this.userId
     );
+    this.onCloseDialog();
   }
 }
